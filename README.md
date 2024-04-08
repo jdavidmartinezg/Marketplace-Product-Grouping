@@ -29,6 +29,8 @@ The script performs the following operations:
 
 ---
 
+## Exploratory analysis and embeddings creation
+
 #### eda.ipynb
 
 This Python script is used for exploratory data analysis (EDA) on a dataset of items obtained from a CSV file. The script performs the following operations:
@@ -55,6 +57,8 @@ This script is useful for preparing the data for machine learning tasks, particu
 
 ---
 
+## Tittle matching to find similar products
+
 #### title_matching.ipynb
 
 This Python script is used for title matching based on the cosine similarity of title embeddings. The script performs the following operations:
@@ -76,6 +80,40 @@ This Python script is used for title matching based on the cosine similarity of 
 8. **Test Similarity Function**: It tests the 'get_similar_titles' function by getting 5 random titles from the 'data' DataFrame and finding the most similar titles to "Michael Jackson - Thriller - Cd". It also displays the rows in the 'data' DataFrame where the title is "Michael Jackson - Thriller - Cd".
 
 This script is useful for tasks involving title matching, such as recommendation systems, where you want to find items that are similar to a given item.
+
+---
+
+## Image matching to find similar products
+
+#### image_matching.ipynb
+
+This Python script is used for image matching based on the Euclidean distance of image features. The script performs the following operations:
+
+1. **Load Libraries**: It imports the necessary libraries, including Clustimage for image clustering, pandas for data manipulation, numpy for numerical operations, and matplotlib for plotting.
+
+2. **Initialize Clustimage**: It initializes a Clustimage object with the method set to 'pca' and the embedding set to 'umap'. 
+
+3. **Import Images**: It imports the images from the "thumbnails" directory and stores the pathnames in the variable `X`.
+
+4. **Cluster Images**: It clusters the images and stores the results in the `results` variable.
+
+5. **Load Data**: It reads a CSV file named 'items.csv' into a pandas DataFrame.
+
+6. **Find Image Index**: It finds the index of a specific image in the `X["pathnames"]` array.
+
+7. **Create DataFrame for Image Features**: It creates a DataFrame with the image features from `cl.results['feat']` and sets the index to the image pathnames.
+
+8. **Calculate Euclidean Distance Matrix**: It calculates the Euclidean distance matrix for the image features using the `euclidean_distances` function from the sklearn library. It then creates a DataFrame with the distance matrix, where the columns and index are the image pathnames.
+
+9. **Create Similarity Function**: It creates a function named 'get_similar_items' that takes an image pathname and a number `n` as input and returns the pathnames of the top `n` images that are most similar to the input image. The function works by getting the Euclidean distances of the input image with all other images, sorting the images based on the distances, and returning the top `n` images.
+
+10. **Test Similarity Function**: It tests the 'get_similar_items' function by finding the most similar images to a specific image.
+
+11. **Create Plotting Function**: It creates a function named 'plot_similar_items' that takes an image pathname and a number `n` as input and plots the input image and the top `n` images that are most similar to the input image.
+
+12. **Test Plotting Function**: It tests the 'plot_similar_items' function by plotting a specific image and its most similar images.
+
+This script is useful for tasks involving image matching, such as recommendation systems, where you want to find images that are similar to a given image.
 
 
 
