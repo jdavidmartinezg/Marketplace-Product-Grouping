@@ -7,6 +7,11 @@ Within any e-commerce marketplace there are products that are similar or identic
 
 ---
 
+## Executive summary of proposed solution
+
+To find similar products we will use the text from the title of the listing as well as the main image thumbnail from the listing. With the text we can find similar items by turning the text from the listing's title into text embeddings. Once the embeddings are created for each product we can compare all products in space by using any distance metric, such as cosine similarity. On the other hand, we can use the thumbnails from the listings to find similar listings with unsupervside learning. The idea is to extract features from the images with PCA and turn those extracted features into image embedding vectors. Once these vectors are generated for each thumbnail, we can compare items with a distance metrcis to find similar products.
+
+
 ## Data download
 
 ##### data_download.ipynb
