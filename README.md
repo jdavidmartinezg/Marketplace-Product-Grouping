@@ -9,13 +9,13 @@ Within any e-commerce marketplace there are products that are similar or identic
 
 ## Executive summary of proposed solution
 
-To find similar products we will use the text from the title of the listing as well as the main image thumbnail from the listing. With the text we can find similar items by turning the text from the listing's title into text embeddings. Once the embeddings are created for each product we can compare all products in space by using any distance metric, such as cosine similarity. On the other hand, we can use the thumbnails from the listings to find similar listings with unsupervside learning. The idea is to extract features from the images with PCA and turn those extracted features into image embedding vectors. Once these vectors are generated for each thumbnail, we can compare items with a distance metrcis to find similar products.
+To find similar products we will use the text from the title of the listing as well as the main image thumbnail from the listing. With the text we can find similar items by turning the text from the listing's title into text embeddings. Once the embeddings are created for each product we can compare all products in space by using any distance metric, such as cosine similarity. On the other hand, we can use the thumbnails from the listings to find similar listings with unsupervside learning. The idea is to extract features from the images with PCA and turn those extracted features into image embedding vectors. Once these vectors are generated for each thumbnail, we can compare items with a distance metric to find similar products.
 
 ## Proposed next steps and points of improvement
 
 * Both image and text similarity approaches can be combined into a weighted function to return a consolidated list of potential similar items for any given product. Also a custom algorithm can be implemented to only return products that appear both in the tittle text similarity as well as the image similarity.
 * Data can be expanded by passing an app token as header to bypass the 1K product limit retrieval on the public API.
-* If there are labeled examples of pair-wise product matches, one can think of using supervised ML to create a computer vision model to detect pairs of similar products in the marketplace. A potential model to accomplish the later could be a CNN architecture based on Siamese convolutional neural networks.
+* If there are labeled examples of pair-wise product matches, one can think of using supervised ML to create a computer vision model to detect pairs of similar products in the marketplace. A potential model to accomplish the latter could be a CNN architecture based on Siamese convolutional neural networks.
 
 
 ## Data download
